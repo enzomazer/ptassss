@@ -5,7 +5,17 @@ class veiculoController {
         res.sendFile(path.join(__dirname, "../", "views", "formVeiculo.html"));
     }
 
-    static cadastrar(req, res) {}
+    static cadastrar(req, res) {
+        const {modelo,placa,ano,cor} = req.body
+
+        const veiculo = client.veiculo.create({data:{
+            modelo,
+            placa,
+            ano parseInt(ano),
+            cor
+        }})
+        res.send(veiculo.id)
+    }
 
     static buscarTodos(req, res) {}
 }

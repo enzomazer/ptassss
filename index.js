@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000
+const port = 5432
 const veiculoRoutes = require("./routes/veiculoRoutes")
 
 app.use(express.urlencoded({extended: true}));
@@ -13,5 +13,5 @@ app.get("/", (req, res)=> {
 app.use("/veiculos", veiculoRoutes)
 
 app.listen(port, (err)=> {
-    console.log(`Servidor rodando em https://localhost:${port}`)
+    console.log(`Servidor rodando em http://localhost:${port}`)
 });
