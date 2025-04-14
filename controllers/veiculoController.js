@@ -3,10 +3,9 @@ const { PrismaClient } = require('@prisma/client')
 
 const client = new PrismaClient();
 
-
 class veiculoController {
     static formCadastro(req, res) {
-        res.sendFile(path.join(__dirname, "../", "views", "formVeiculo.html"));
+        res.render("formVeiculo")
     }
 
     static async cadastrar(req, res) {
@@ -25,8 +24,7 @@ class veiculoController {
 
     static async buscarTodos(req, res) {
         const veiculos = await client.veiculo.findMany({})
-        res.send(JSON.stringify(veiculos))
-    }
-}
+        res.render("usuarios")
+}}
 
 module.exports = veiculoController;
