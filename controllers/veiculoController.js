@@ -19,7 +19,7 @@ class veiculoController {
             ano: parseInt(ano)
             
         }})
-        res.send({veiculo})
+        res.redirect({veiculo})
     }
 
     static async buscarTodos(req, res) {
