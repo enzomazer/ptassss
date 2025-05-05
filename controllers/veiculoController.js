@@ -19,12 +19,12 @@ class veiculoController {
             ano: parseInt(ano)
             
         }})
-        res.redirect({veiculo})
+        res.redirect('/veiculos/todos')
     }
 
     static async buscarTodos(req, res) {
         const veiculos = await client.veiculo.findMany({})
-        res.render("usuarios")
+        res.render("veiculos", {veiculos})
 }}
 
 module.exports = veiculoController;
