@@ -1,11 +1,9 @@
-const express = require("express")
-const router = express.Router()
-const veiculoController = require("../controllers/veiculoController.js")
+const router = require("express").Router();
 
-router.get("/cadastro", veiculoController.formCadastro);
+const veiculoController = require('../controllers/veiculoController');
 
 router.post("/cadastro", veiculoController.cadastrar);
 
-router.get("/todos", veiculoController.buscarTodos)
+router.get("/todos", veiculoController.buscar);
 
-module.exports = router
+module.exports = router;
